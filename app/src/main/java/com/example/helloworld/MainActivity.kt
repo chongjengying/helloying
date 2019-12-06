@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_main.*
 
 //:=extends
 class MainActivity : AppCompatActivity() {
@@ -23,12 +24,18 @@ class MainActivity : AppCompatActivity() {
         buttonClickMe.setOnClickListener { showMessage() }
 
         val buttonReset : Button = findViewById(R.id.buttonReset)
-        buttonReset.setOnClickListener({ showMessage() })
+        buttonReset.setOnClickListener({ reset() })
     }
 
     private fun showMessage() {
       val textViewMessage: TextView =findViewById(R.id.textViewMessage)
         textViewMessage.setText(getString(R.string.hello))
+    }
+    private fun reset()
+    {
+        val textViewMessage: TextView=findViewById(R.id.textViewMessage)
+        textViewMessage.setText("Hello World!!")
+
     }
 
 }
